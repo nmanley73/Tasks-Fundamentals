@@ -48,12 +48,13 @@ Def Counts
 On running the program the output wasn't sorted in alphabetical order as specified in the task. The keys of the dictionary was sorted by using the sorted function [6] within the for loop.
 
 ### Code Solution:
-- Firstly the input is defined in the variable l.               l = ['A', 'A', 'B', 'C', 'A']
-- The function counts is defined using the keyword def.         def counts(l):
-- A for loop used to iterate each item in the list              for i in range(0, len(l)):
-- Return gets a value from the function                         return dict((x,l.count(x)) for x in sorted(set (l)))
-- Dict() creates a dictionary for the output to be displayed    dict((x,l.count(x))
-- Sorted function sorts the dictionary in alphabetical order    sorted(set (l)))
+                                 
+- l = ['A', 'A', 'B', 'C', 'A']                                 Firstly the input is defined in the variable l. 
+- def counts(l):                                                The function counts is defined using the keyword def. 
+- for i in range(0, len(l)):                                    A for loop used to iterate each item in the list              
+- return dict((x,l.count(x)) for x in sorted(set (l)))          Return gets a value from the function                         
+- dict((x,l.count(x))                                           Dict() creates a dictionary for the output to be displayed    
+- sorted(set (l)))                                              Sorted function sorts the dictionary in alphabetical order    
 
 *A list of strings
 l = ['A', 'A', 'B', 'C', 'A']
@@ -82,7 +83,59 @@ def counts(l):
 
 [7] - thispointer.com: Python: How to Sort a Dictionary by key or Value?; https://thispointer.com/python-how-to-sort-a-dictionary-by-key-or-value/
 
+*****
+
+### Task2
+
+**November 2nd 2020:** Write a function called dicerolls that simulates rolling dice. Your function should take 2 parameters: the number of dice k and the number of times to roll the dice n. The function should simulate randomly rolling k dice n times. Keeping track of each total face value. It should then return a dictionary with the number of times each possible total face value occurred.
+
+#### Description
+In this task i will be simulating the rolling of two dice. The dice are to be rolled 1000 times and the results are returned as a dictionary with the number of times each possible face value occurs. The paramters to start with are the number of rolls of the dice (k = 1000) the number of dice (n = 2) and the number of sides on dice (6). I use the random.choice method to simulate the rolling of the dice and generate the results.
+
+#### Research
+The project can be broken down into a number of different sections which need to be researched.
+1. random.randint method
+2. random.choice method
+3. Range method
+
+There is a considerable amount of content online both related to python and other programming languages which deal with rolling dice simulation. The majority use the random.randint function to complete the task. I have completed an example displaying simulation of dice roll with one dice using the random.randint method. Using one dice there is an equal probability of getting any of the six sides. This is true also of the random.choice method for rolling one dice.
+
+I used Dr. Soumen Atta publication Simulating randomness using Python’s random module to research using the random.choice method to simulate the rolling of multiple dice. The publication describes various different parameters using the random.choice method to displat the simulation of rolling dice. Within the function the range method is used to get the start and end point which is used in the random.choice function to generate the simulation.
+
+### Code Solution:
+- import numpy as np                                            Import the numpy library                                          
+- def dicerolls(k, n):                                          The function dicerolls is defined with 2 parameters k & n         
+                                                                k = the number of dice
+                                                                n = the numbers of rolls of the dice
+- counter = {n : 0 for n in range(k, k*6 + 1)}                  Prepares the dictionary 
+- for i in range(n):                                            A for loop used to iterate each item in the list 
+- total = sum(random.choices(range(1, 6 + 1), k = k))           The sum of the rolls are stored in varaible total using random.choice
+- counter[total] += 1                                           Counter displays the result in the dictionary
+- dicerolls(2, 1000)                                            Run the function dicerolls specifying the number of dice and the number of dice rolls        
+
+* import numpy library
+import numpy as np
+* define the function dicerolls with 2 parameters k = no. of dice & n = no. of dice rolls
+def dicerolls(k, n):
+    * prepare dictionary with zero values for all possible results
+    counter = {n : 0 for n in range(k, k*6 + 1)}
+
+    * roll the dice
+    for i in range(n):
+        * sums all rolls of the dice
+        total = sum(random.choices(range(1, 6 + 1), k = k))
+        * adds result of each roll to counter
+        counter[total] += 1
+    return counter
+* enter values for the no. of dice & no. of rolls (2 and 1000)
+dicerolls(2, 1000)
 
 
+### References:
+[1] - Dr. Soumen Atta: Simulating randomness using Python’s random module; https://soumenatta.medium.com/simulating-randomness-using-pythons-random-module-de9c08910c3c
 
+[2] - GeekforGeeks: Python | range() method; https://www.geeksforgeeks.org/python-range-method/?ref=rp
 
+[3] - w3schools.com: Python Random choices() Method; https://www.w3schools.com/python/ref_random_choices.asp
+
+[4] - Programiz: Python Operators; https://www.programiz.com/python-programming/operators#:~:text=What%20are%20operators%20in%20python%3F%20Operators%20are%20special,and%205%20is%20the%20output%20of%20the%20operation.

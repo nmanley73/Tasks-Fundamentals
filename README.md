@@ -139,3 +139,18 @@ dicerolls(2, 1000)
 [3] - w3schools.com: Python Random choices() Method; https://www.w3schools.com/python/ref_random_choices.asp
 
 [4] - Programiz: Python Operators; https://www.programiz.com/python-programming/operators#:~:text=What%20are%20operators%20in%20python%3F%20Operators%20are%20special,and%205%20is%20the%20output%20of%20the%20operation.
+
+### Task 3
+
+The numpy.random.binomial function can be used to simulate flipping a coin with a 50/50 chance of heads or tails. Interestingly, if a coin is flipped many times then the number of heads is well approximated by a bell-shaped curve. For instance, if we flip a coin 100 times in a row the chance of getting 50 heads is relatively high, the chances of getting 0 or 100 heads is relatively low, and the chances of getting any other number of heads decreases as you move away from 50 in either direction towards 0 or 100. Write some python code that simulates flipping a coin 100 times. Then run this code 1,000 times, keeping track of the number of heads in each of the 1,000 simulations. Select an appropriate plot to depict the resulting list of 1,000 numbers, showing that it roughly follows a bell-shaped curve.
+
+#### Description
+
+The coin toss because it has only two outcomes is a common method to resolve disputes, how teams start a game as it is a fair and simple method of getting a result. This task simulates the tossing of a coin with 100 repititions to produce a number of how many heads (successes) occur. This experiment is then repeated 1,000 times to observe if the number of heads of all thousand experiments roughly fits into a bell-shaped curve plot. Where the majority of results are along the central average with very few results along the extremeties of the plot.
+
+#### Research
+The project can be broken down into a number of different sections which need to be researched.
+1. Background of coin toss simulation
+2. random.binomial distribution
+2. bell-shaped curve plot
+3. Range method

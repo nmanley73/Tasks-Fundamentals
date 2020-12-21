@@ -171,19 +171,19 @@ The more coins that are flipped the less likely that the extremes of no heads an
 
 #### Code Solution
 
-import numpy as np                                                          Import numpy and matplotlib libraries                                    
-import matplotlib.pyplot as plt
+- import numpy as np                                                          Import numpy and matplotlib libraries                                    
+- import matplotlib.pyplot as plt
 
-np.random.seed(42)
-n=100                                                                       Assign the values to no. of trials (n) and probability (p)
-p=0.5
-size=1000                                                                   Assign the value to size parameter
-x=np.random.binomial(n, p, size)                                            Use random.binomial method to flip the coin and assign to a variable x
-print("Results of 1,000 experiments -",x)                                   Print the reult of the experiment in an array
-bc=[np.equal(x,i).sum() for i in range(n)]
-plt.plot(list(range(n)), bc, color='blue')                                  Plot the results of the array in a blue color
-plt.xlabel('No of Heads')                                                   Assign labels to x and y axis
-plt.ylabel('Probability')
+- np.random.seed(42)
+- n=100                                                                       Assign the values to no. of trials (n) and probability (p)
+- p=0.5
+- size=1000                                                                   Assign the value to size parameter
+- x=np.random.binomial(n, p, size)                                            Use random.binomial method to flip the coin and assign to a variable x
+- print("Results of 1,000 experiments -",x)                                   Print the reult of the experiment in an array
+- bc=[np.equal(x,i).sum() for i in range(n)]
+- plt.plot(list(range(n)), bc, color='blue')                                  Plot the results of the array in a blue color
+- plt.xlabel('No of Heads')                                                   Assign labels to x and y axis
+- plt.ylabel('Probability')
 
 ### References
 [1]-WIRED: Cheat With Science: Win a Coin Toss; https://www.wired.com/2010/11/st-cheatscience-cointoss/

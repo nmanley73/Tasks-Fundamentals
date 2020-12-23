@@ -213,7 +213,32 @@ Simpson’s paradox is a well-known statistical paradox where a trend evident in
 #### Description
 Simpsons paradox is a phenomenon where individual data sets show a particular trend however when these datasets are combined the combined dataset shows the opposite trend or none at all. In the experiment 8 different arrays are created aand all have a similar trend.
 
+### Code Solution
 
+- import numpy as np                                                                    Import libraries
+- import matplotlib.pyplot as plt
+- import seaborn as sns
+- import pandas as pd
+
+- plt.style.use("ggplot")                                                               Make plot tidier
+- plt.rcParams['figure.figsize'] = (20,8)                                               Make plot bigger
+
+- a=5                                                                                   Assign values to the variable a and b
+- b=5
+
+- x1 = np.linspace(2, 150, 20)                                                          Create 8 individual databsets
+- x2 = np.linspace(5, 60, 20)
+- x3 = np.linspace(5, 100, 20)
+- x4 = np.linspace(2, 50, 20)
+- y1 = a * x1 + b
+- y2 = a * x2 + b
+- y3 = a * x3 + b
+- y4 = a * x4 + b
+
+- z = np.concatenate([x1, y1, x2, y2, x3, y3, x4, y4])    	                            Merge all 8 databsets into 1 dataset using numpy.concatenate
+
+- df = pd.DataFrame({"z":z})                                                            Create Dataframe
+- sns.lineplot(data = df);                                                              Create lineplot to display data
 
 ### References
 [1]-ThoughtCo.: Overview of Simpson's Paradox in Statistics; https://www.thoughtco.com/what-is-simpsons-paradox-3126365

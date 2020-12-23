@@ -205,3 +205,21 @@ The more coins that are flipped the less likely that the extremes of no heads an
 [9]-towards datascience: How To Code A Fair Coin Flip In Python — Regina Of Tech; https://towardsdatascience.com/how-to-code-a-fair-coin-flip-in-python-d54312f33da9
 
 [10]-Includehelp.com: Python | Binomial Experiment Simulation; https://www.includehelp.com/python/binomial-experiment-simulation.aspx
+
+### Task 4
+
+Simpson’s paradox is a well-known statistical paradox where a trend evident in a number of groups reverses when the groups are combined into one big data set. Use numpy to create four data sets, each with an x array and a corresponding y array, to demonstrate Simpson’s paradox. You might create your x arrays using numpy.linspace and create the y array for each x using notation like y = a * x + b where you choose the a and b for each x , y pair to demonstrate the paradox.
+
+#### Description
+Simpsons paradox is a phenomenon where individual data sets show a particular trend however when these datasets are combined the combined dataset shows the opposite trend or none at all. In the experiment 8 different arrays are created aand all have a similar trend.
+
+
+
+### References
+[1]-ThoughtCo.: Overview of Simpson's Paradox in Statistics; https://www.thoughtco.com/what-is-simpsons-paradox-3126365
+
+[2]-Wikipedia: Simpson's paradox; https://en.wikipedia.org/wiki/Simpson%27s_paradox#:~:text=One%20of%20the%20best-known%20examples%20of%20Simpson%27s%20paradox,it%20was%20unlikely%20to%20be%20due%20to%20chance.
+
+[3]-JournalDev: Seaborn Line Plots; https://www.journaldev.com/39342/seaborn-line-plot
+
+[4]-Python Data Science Handbook: Combining Datasets: Concat and Append; https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html
